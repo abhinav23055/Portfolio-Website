@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhinav — Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Unbounded:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div id="grain"></div>
+
+<!-- PROGRESS -->
+<div id="prog-bar"><div id="prog-fill"></div></div>
+
+<!-- HEADER -->
+<header id="header">
+  <a class="hd-logo" href="#">Abhinav<span style="color:var(--red)">.</span></a>
+  <ul class="hd-nav">
+    <li><a href="#" onclick="scrollToPanel(0)"><span class="dot">01.</span> Home</a></li>
+    <li><a href="#" onclick="scrollToPanel(1)"><span class="dot">02.</span> About</a></li>
+    <li><a href="#" onclick="scrollToPanel(2)"><span class="dot">03.</span> Skills</a></li>
+    <li><a href="#" onclick="scrollToPanel(3)"><span class="dot">04.</span> Work</a></li>
+    <li><a href="#" onclick="scrollToPanel(4)"><span class="dot">05.</span> Contact</a></li>
+  </ul>
+  <div class="hd-right">
+    <div id="scroll-hint">SCROLL OR USE ARROW KEYS →</div>
+  </div>
+</header>
+
+<!-- HORIZONTAL TRACK -->
+<div id="track">
+
+  <!-- ══ PANEL 1: HERO ══ -->
+  <section class="panel" id="p-hero">
+    <div class="panel-inner">
+      <p class="hero-issue fade-up">Issue No. 01 — Portfolio 2025</p>
+      <h1 class="hero-name fade-up d1">
+        ABHINAV
+        <span>Web Developer &amp; Tech Enthusiast</span>
+      </h1>
+      <p class="hero-tagline fade-up d2">
+        Building things for the internet — clean code, thoughtful design, and a relentless curiosity for what's possible.
+      </p>
+      <div class="hero-btns fade-up d3">
+        <a href="#" class="btn-primary" onclick="scrollToPanel(3)">View Work →</a>
+        <a href="#" class="btn-ghost" onclick="scrollToPanel(4)">Say Hello</a>
+      </div>
+    </div>
+    <div class="hero-bg-num" aria-hidden="true">AB</div>
+    <div class="scroll-arrow">SCROLL → </div>
+  </section>
+
+  <!-- ══ PANEL 2: ABOUT ══ -->
+  <section class="panel" id="p-about">
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="about-chapter fade-up">02 — About</p>
+        <h2 class="about-h fade-up d1">THE<br>PERSON<br><em>Behind It</em></h2>
+        <div class="about-year fade-up d2">25</div>
+      </div>
+      <div class="about-right">
+        <p class="about-lead fade-up">"I don't just write code — I craft experiences that live at the intersection of logic and craft."</p>
+        <p class="about-body fade-up d1">
+          I'm a <strong>3rd-year BCA student</strong> at Delhi Technical Campus, Delhi — building modern, performant web applications since I first opened a text editor and never looked back.
+        </p>
+        <p class="about-body fade-up d2">
+          My work spans full-stack JavaScript, real-time systems, and database design. I care deeply about the details — from pixel-perfect interfaces to clean, maintainable APIs.
+        </p>
+        <div class="about-rule fade-up d2"></div>
+        <div class="about-meta fade-up d3">
+          <div class="meta-item">
+            <div class="meta-key">Location</div>
+            <div class="meta-val">Delhi, India</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-key">Education</div>
+            <div class="meta-val">BCA — Delhi Technical Campus</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-key">Status</div>
+            <div class="meta-val" style="color:var(--red)">Available for work</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-key">Focus</div>
+            <div class="meta-val">Full-stack Web Dev</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PANEL 3: SKILLS ══ -->
+  <section class="panel" id="p-skills">
+    <div class="panel-inner">
+      <div class="skills-top">
+        <div>
+          <p class="skills-label fade-up">03 — Skills</p>
+          <h2 class="skills-h fade-up d1">THE<br><em>Toolkit</em></h2>
+        </div>
+        <p class="skills-sub fade-up d2">Technologies I reach for when building.</p>
+      </div>
+      <div class="skill-list fade-up d2" id="skill-list">
+        <!-- injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PANEL 4: PROJECTS ══ -->
+  <section class="panel" id="p-projects">
+    <div class="panel-inner">
+      <div class="proj-head fade-up">
+        <div>
+          <p class="proj-label">04 — Work</p>
+          <h2 class="proj-h">GITHUB <em>Repos</em></h2>
+        </div>
+        <div class="gh-controls">
+          <input class="gh-input" id="ghUser" value="abhinav23055" placeholder="username" style="width:160px;">
+          <input class="gh-input" id="srch" placeholder="Search…" style="width:160px;">
+          <button class="gh-btn" id="fetchBtn" onclick="fetchRepos()">Fetch</button>
+        </div>
+      </div>
+      <div class="lang-tabs fade-up d1" id="ltabs">
+        <button class="ltab on" onclick="filterLang('all')">All</button>
+      </div>
+      <div class="proj-grid" id="pgrid">
+        <div class="pgrid-msg"><span class="spin"></span>Loading repositories…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PANEL 5: CONTACT ══ -->
+  <section class="panel" id="p-contact">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="contact-chapter fade-up">05 — Contact</p>
+        <h2 class="contact-big fade-up d1">
+          LET'S
+          <em>Talk.</em>
+        </h2>
+        <p class="contact-note fade-up d2">Open to internships, collaborations, freelance, and interesting conversations.</p>
+      </div>
+      <div class="contact-right fade-up d2">
+        <div class="contact-links">
+          <a href="https://github.com/abhinav23055" target="_blank" class="clink">
+            <div><div class="clink-label">GitHub</div><div class="clink-sub">abhinav23055</div></div>
+            <span class="clink-arrow">→</span>
+          </a>
+          <a href="mailto:abhinav@example.com" class="clink">
+            <div><div class="clink-label">Email</div><div class="clink-sub">abhinav@example.com</div></div>
+            <span class="clink-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/abhinav-gupta-9182a8329/" target="_blank" class="clink">
+            <div><div class="clink-label">LinkedIn</div><div class="clink-sub">Connect with me</div></div>
+            <span class="clink-arrow">→</span>
+          </a>
+        </div>
+        <div class="colophon fade-up d3">
+          © 2025 Abhinav — Designed &amp; built from scratch.<br>
+          Delhi, India · Available for new work.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /track -->
+<div id="toast"></div>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="script.js"></script>
+</body>
+</html>
