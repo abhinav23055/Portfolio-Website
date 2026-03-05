@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhinav — Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">AB<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#showcase">Showcase</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-left">
+    <p class="hero-tag">Available for opportunities</p>
+    <h1 class="hero-h1">
+      <span class="l1">WEB</span>
+      <span class="l2">DEV</span>
+      <span class="l3">ELOPER</span>
+    </h1>
+    <p class="hero-sub">Building things for the internet. I'm Abhinav — a developer and tech enthusiast based in Delhi, India.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-solid">View Work ↗</a>
+      <a href="#contact" class="btn btn-ghost">Say Hello</a>
+    </div>
+  </div>
+  <div id="hero-right"></div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll to explore</span></div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-it rev"><span class="stat-n" id="s-repos">—</span><div class="stat-l">GitHub Repos</div></div>
+  <div class="stat-it rev d1"><span class="stat-n">3<em>rd</em></span><div class="stat-l">Year BCA</div></div>
+  <div class="stat-it rev d2"><span class="stat-n">10<em>+</em></span><div class="stat-l">Technologies</div></div>
+  <div class="stat-it rev d3"><span class="stat-n"><em>∞</em></span><div class="stat-l">Curiosity</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="rev">
+    <div class="about-num">01</div>
+    <div class="sl">About</div>
+    <h2 class="st">Crafting<br><em>Digital</em><br>Things</h2>
+  </div>
+  <div class="rev d2">
+    <p class="ap">I'm a <strong>3rd-year BCA student</strong> at Delhi Technical Campus with a passion for building modern, performant web applications that don't just work — they feel good.</p>
+    <p class="ap">I thrive at the intersection of clean code and great design, turning ideas into real products. Always learning, always building.</p>
+    <div class="sl" style="margin-top:2rem;">Stack</div>
+    <div class="skills-r">
+      <span class="stag">HTML / CSS</span><span class="stag">JavaScript</span>
+      <span class="stag">React.js</span><span class="stag">Node.js</span>
+      <span class="stag">Express.js</span><span class="stag">MongoDB</span>
+      <span class="stag">Socket.IO</span><span class="stag">MySQL</span>
+      <span class="stag">Python</span><span class="stag">Git & GitHub</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="proj-top rev">
+    <div>
+      <div class="sl">GitHub</div>
+      <h2 class="st" style="margin-bottom:0">All <em>Work</em></h2>
+    </div>
+    <div class="gh-ctrl">
+      <div class="srchw">
+        <span class="srcnico">⌕</span>
+        <input class="srchin" id="srch" placeholder="Search repos…">
+      </div>
+      <input class="ghinput" id="ghUser" value="abhinav23055" placeholder="GitHub username">
+      <button class="btnf" id="fetchBtn" onclick="fetchRepos()">Fetch</button>
+    </div>
+  </div>
+  <div class="ftabs rev d1" id="ftabs">
+    <button class="ftab on" onclick="filterLang('all')">All</button>
+  </div>
+  <div class="pgrid" id="pgrid">
+    <div class="pgrid-msg"><span class="spin"></span>Loading repositories…</div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section id="showcase">
+  <div class="rev">
+    <div class="sl">Featured</div>
+    <h2 class="st">Show<em>case</em></h2>
+    <p style="font-size:.82rem;color:var(--dim);margin-top:.5rem;">Pin projects from above to feature them here.</p>
+  </div>
+  <div id="scgrid">
+    <div class="sc-empty" id="scEmpty">✦ No featured projects yet — add them from above ✦</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="rev">
+    <div class="cbig">LET'S<em>TALK.</em></div>
+  </div>
+  <div class="cright rev d2">
+    <p>Open to internships, collaborations, and interesting projects. Don't hesitate to reach out.</p>
+    <div class="clinks">
+      <a href="https://github.com/abhinav23055" target="_blank" class="clink">
+        <span>GitHub</span><em>abhinav23055 ↗</em>
+      </a>
+      <a href="/cdn-cgi/l/email-protection#78191a101116190e381d00191508141d561b1715" class="clink">
+        <span>Email</span><em><span class="__cf_email__" data-cfemail="10717278797e7166507568717d607c753e737f7d">[email&#160;protected]</span> ↗</em>
+      </a>
+      <a href="https://linkedin.com/in/abhinav" target="_blank" class="clink">
+        <span>LinkedIn</span><em>Connect ↗</em>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo">AB.</div>
+  <div class="fcopy">© 2025 Abhinav — Built with <em>✦</em></div>
+</footer>
+
+<div id="toast"></div>
+
+<!-- THREE.JS SCENE -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 200);
+  camera.position.set(0, 0, 18);
+
+  function resize(){
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // ── MATERIALS ──
+  const mRing    = new THREE.MeshBasicMaterial({color:0x839788, transparent:true, opacity:0.18, wireframe:false});
+  const mRingThin= new THREE.MeshBasicMaterial({color:0xbfd7ea, transparent:true, opacity:0.10});
+  const mDot     = new THREE.MeshBasicMaterial({color:0xeee0cb, transparent:true, opacity:0.35});
+  const mLine    = new THREE.LineBasicMaterial({color:0x839788, transparent:true, opacity:0.07});
+
+  // ── LARGE SLOW RINGS ──
+  const rings = [];
+  const ringDefs = [
+    {r:6.5,  tube:.018, tilt:[.4,0,.2],   speed:.0007, phase:0},
+    {r:9.2,  tube:.014, tilt:[-.3,.5,.1],  speed:.0005, phase:1.2},
+    {r:4.8,  tube:.022, tilt:[.1,-.4,.6],  speed:.0009, phase:2.4},
+    {r:12.0, tube:.010, tilt:[.6,.2,-.3],  speed:.0003, phase:0.8},
+    {r:7.8,  tube:.016, tilt:[-.5,.1,.4],  speed:.0006, phase:3.1},
+    {r:3.5,  tube:.026, tilt:[.2,.6,-.1],  speed:.0011, phase:1.7},
+  ];
+  ringDefs.forEach(d => {
+    const geo = new THREE.TorusGeometry(d.r, d.tube, 3, 120);
+    const mat = d.r > 8 ? mRingThin.clone() : mRing.clone();
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.rotation.set(d.tilt[0], d.tilt[1], d.tilt[2]);
+    mesh.userData = {speed: d.speed, phase: d.phase, baseRot: [...d.tilt]};
+    scene.add(mesh);
+    rings.push(mesh);
+  });
+
+  // ── SPARSE FLOATING DOTS ──
+  const dotGeo = new THREE.SphereGeometry(0.04, 6, 6);
+  const dots = [];
+  for(let i = 0; i < 55; i++){
+    const d = new THREE.Mesh(dotGeo, new THREE.MeshBasicMaterial({
+      color: i % 4 === 0 ? 0xbfd7ea : i % 3 === 0 ? 0xeee0cb : 0x839788,
+      transparent: true,
+      opacity: Math.random() * 0.3 + 0.08
+    }));
+    d.position.set(
+      (Math.random() - .5) * 30,
+      (Math.random() - .5) * 20,
+      (Math.random() - .5) * 10 - 5
+    );
+    d.userData.vy = (Math.random() - .5) * 0.003;
+    d.userData.vx = (Math.random() - .5) * 0.002;
+    scene.add(d);
+    dots.push(d);
+  }
+
+  // ── SINGLE CENTRAL WIREFRAME ICOSAHEDRON ──
+  const icoGeo = new THREE.IcosahedronGeometry(1.8, 1);
+  const icoMat = new THREE.MeshBasicMaterial({color:0x839788, wireframe:true, transparent:true, opacity:0.08});
+  const ico = new THREE.Mesh(icoGeo, icoMat);
+  ico.position.set(5, 0, 0);
+  scene.add(ico);
+
+  // ── MOUSE ──
+  let mx = 0, my = 0;
+  document.addEventListener('mousemove', e => {
+    mx = (e.clientX / window.innerWidth - .5) * 2;
+    my = (e.clientY / window.innerHeight - .5) * 2;
+  });
+
+  let t = 0;
+  function animate(){
+    requestAnimationFrame(animate);
+    t += 0.006;
+
+    // Rings slowly rotate + breathe
+    rings.forEach((r, i) => {
+      const d = r.userData;
+      r.rotation.x = d.baseRot[0] + Math.sin(t * d.speed * 800 + d.phase) * 0.15 + my * 0.04;
+      r.rotation.y = d.baseRot[1] + t * d.speed * 500 + mx * 0.06;
+      r.rotation.z = d.baseRot[2] + Math.cos(t * d.speed * 600 + d.phase) * 0.1;
+      // Gentle opacity pulse
+      r.material.opacity = r.material.opacity + (Math.sin(t * 0.4 + d.phase) * 0.002);
+    });
+
+    // Dots drift slowly
+    dots.forEach(d => {
+      d.position.x += d.userData.vx;
+      d.position.y += d.userData.vy;
+      if(Math.abs(d.position.x) > 15) d.userData.vx *= -1;
+      if(Math.abs(d.position.y) > 10) d.userData.vy *= -1;
+    });
+
+    // Icosahedron slow spin
+    ico.rotation.x = t * 0.12 + my * 0.05;
+    ico.rotation.y = t * 0.18 + mx * 0.08;
+
+    // Camera subtle sway with mouse
+    camera.position.x += (mx * 0.6 - camera.position.x) * 0.02;
+    camera.position.y += (-my * 0.4 - camera.position.y) * 0.02;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+</script>
+
+<!-- CURSOR -->
+<script>
+const cur=document.getElementById('cur'), curR=document.getElementById('cur-r');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function anim(){
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+  curR.style.left=rx+'px';curR.style.top=ry+'px';
+  requestAnimationFrame(anim);
+})();
+document.querySelectorAll('a,button,.stag').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';cur.style.background='var(--sky)';curR.style.width='54px';curR.style.height='54px';curR.style.borderColor='rgba(131,151,136,.5)';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='8px';cur.style.height='8px';cur.style.background='var(--teal)';curR.style.width='36px';curR.style.height='36px';curR.style.borderColor='rgba(131,151,136,.4)';});
+});
+</script>
+
+<!-- SCROLL -->
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',scrollY>60);});
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+</script>
+
+<!-- GITHUB LOGIC -->
+<script src="script.js"></script>
+</body>
+</html>
